@@ -32,5 +32,14 @@ int data[LENGTH]
         printf("%d\n", data[i]);
     }
 
+    pi = data;
+    ppi = &pi;
+
+    for (int i = 0; i < LENGTH; i++)
+    {
+        printf("\nLoop[%d] array address is %p\n", i, data);
+        printf("Item pointed to by pi is %d\n", *pi);
+        printf("Item pointed to by ppi is %p\n", *ppi);
+    }
     return 0;
 }
