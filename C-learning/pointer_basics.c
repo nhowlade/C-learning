@@ -40,7 +40,7 @@ int main(int argc, char **argv)
         printf("Item pointed to by pi is %d\n", *pi);
         printf("Item pointed to by ppi is %p\n", *ppi);
         printf("ITem pointed by double indirection of ppi is %d\n\n", **ppi);
-        printf("The address of pi is %p and the value of pi (what it points to) is %p\n\n", &pi, ppi);
+        printf("The address of pi is %p and the value of ppi (what it points to) is %p\n\n", &pi, ppi);
 
         pi++;
     }
