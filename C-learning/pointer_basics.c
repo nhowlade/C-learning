@@ -1,10 +1,9 @@
 #include <stdio.h>
 
 #define LENGTH 3
-int data[LENGTH]
+int data[LENGTH];
 
-    int
-    main(int argc, char **argv)
+int main(int argc, char **argv)
 {
     // int num;
     // int *numPtr;
@@ -40,6 +39,10 @@ int data[LENGTH]
         printf("\nLoop[%d] array address is %p\n", i, data);
         printf("Item pointed to by pi is %d\n", *pi);
         printf("Item pointed to by ppi is %p\n", *ppi);
+        printf("ITem pointed by double indirection of ppi is %d\n\n", **ppi);
+        printf("The address of pi is %p and the value of pi (what it points to) is %p\n\n", &pi, ppi);
+
+        pi++;
     }
     return 0;
 }
