@@ -9,7 +9,7 @@ char *string_function(char *aString)
     char *s;
     s = (char *)malloc(MAXSTRLEN);
     s[0] = 0;
-    strcat(s, "Hello");
+    strcat(s, "Hello ");
     strcat(s, aString);
     strcat(s, "\n");
     return s;
