@@ -32,5 +32,12 @@ int main(int argc, char **argv)
     printf("item pointed to by gp is %d\n", *(int *)gp);
     gp = (int *)gp + 1;
     printf("item pointed to by gp now is %d\n", *(int *)gp);
+
+    gp = words;
+    printf("\nwords array address is %p\n", gp);
+    printf("item pointed to by gp is %s\n", *(char **)gp);
+    gp = (char **)gp + 1;
+    printf("item pointed to by gp now is %s\n", *(char **)gp);
+
     return 0;
 }
