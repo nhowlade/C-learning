@@ -6,3 +6,7 @@ char pointer.
 
 Calloc is a function similar to that in function like malloc, but the difference
 is that it also initialises the memory after allocating it.
+
+Pointer arithmetic refers to the pointer variable and adding 1 to it moves
+the pointer to next element by incrementing it by taking into account the
+size of the type of value it is pointing to.
