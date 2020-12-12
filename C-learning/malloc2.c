@@ -21,5 +21,6 @@ int main(int argc, char **argv)
     printf("s is %s\n", s);
     s[0] = 'c';
     printf("s is now %s\n", s);
+    free(s);
     return 0;
 }
