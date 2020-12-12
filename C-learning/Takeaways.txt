@@ -3,3 +3,6 @@ Pointers are variables that hold the address of other variables.
 A String is an array of chars and so when accessing a string in 
 an array of strings you would want it to be referenced with a double
 char pointer.
+
+Calloc is a function similar to that in function like malloc, but the difference
+is that it also initialises the memory after allocating it.
