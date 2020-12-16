@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 typedef struct listitem
 {
     struct listitem *previous;
@@ -21,4 +24,12 @@ int main()
         temp->previous = &head;
         temp->next->previous = temp;
     }
+
+    temp = head.next;
+    while (temp->next != &head)
+    {
+        printf("THE VALUE Is %d\n", temp->data);
+        temp = temp->next;
+    }
+    return 0;
 }
