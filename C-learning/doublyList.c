@@ -26,7 +26,7 @@ int main()
     }
 
     temp = head.next;
-    while (temp->next != &head)
+    while (temp != &head)
     {
         printf("THE VALUE Is %d\n", temp->data);
         temp = temp->next;

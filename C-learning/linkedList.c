@@ -22,7 +22,7 @@ int main()
     }
 
     temp = listhead;
-    while (temp->next != NULL)
+    while (temp != NULL)
     {
 
         printf("The value of item is %d\n", temp->data);
