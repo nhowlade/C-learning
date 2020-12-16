@@ -38,7 +38,8 @@ DATA *pop()
     }
     else
     {
-        top = top - 1;
+        top = top - 1; //  This is decremented here as the memory being pointed to is on a garbage place.
+                       //  Hence, decremented value then points to the top of the stack
         data = top;
     }
     return data;
@@ -46,5 +47,29 @@ DATA *pop()
 
 int main()
 {
+    DATA data, *pdata;
+
+    base = (DATA *)malloc(DATASIZE * sizeof(DATA));
+    end = base + DATASIZE;
+    top = base;
+
+    for (int i = 0;; i++)
+    {
+        data.a = i;
+        data.b = i * 2;
+        if (!push(&data))
+        {
+            break;
+        }
+    }
+
+    pdata = base + 4;
+    do
+    {
+        pdata = pop();
+        if (pdata != NULL)
+            printf("data popped is %d: %f\n", pdata->a, pdata->b);
+
+    } while (pdata != NULL);
     return 0;
 }
