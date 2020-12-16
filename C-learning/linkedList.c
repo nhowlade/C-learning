@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 typedef struct listitem
 {
@@ -19,4 +20,13 @@ int main()
         temp->next = listhead;
         listhead = temp;
     }
+
+    temp = listhead;
+    while (temp->next != NULL)
+    {
+
+        printf("The value of item is %d\n", temp->data);
+        temp = temp->next;
+    }
+    return 0;
 }
