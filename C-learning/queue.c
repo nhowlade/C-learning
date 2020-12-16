@@ -10,8 +10,8 @@ typedef struct listitem
 
 typedef struct listhead
 {
-    struct listhead *start;
-    struct listhead *end;
+    struct listitem *start;
+    struct listitem *end;
 } LISTHEAD;
 
 LISTHEAD head;
@@ -24,6 +24,22 @@ void enqueue(LISTITEM *item)
     item->previous = temp;          // Make the "old" item to be the previous link for the new item
     item->next = (LISTHEAD *)&head; // Refer the new item to point to the head
     temp->next = item;              //Make the "old" item to point to the new item
+}
+
+LISTITEM *dequeue()
+{
+    LISTITEM *temp;
+    temp = head.start;
+    if (temp == (LISTITEM *)&head)
+    {
+        temp = NULL;
+    }
+    else
+    {
+        head.start = temp->next;
+        (head.end)->previous = (LISTITEM *)&head;
+    }
+    return temp;
 }
 int main()
 {
