@@ -41,6 +41,14 @@ LISTITEM *dequeue()
     }
     return temp;
 }
+
+int length(LISTHEAD *queue)
+{
+    LISTITEM *item;
+    int length;
+
+    temp = queue->start;
+}
 int main()
 {
     return 0;
