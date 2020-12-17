@@ -44,10 +44,22 @@ LISTITEM *dequeue()
 
 int length(LISTHEAD *queue)
 {
-    LISTITEM *item;
+    LISTITEM *temp;
     int length;
 
     temp = queue->start;
+    length = 0;
+    do
+    {
+        if (temp == (LISTITEM *)queue)
+        {
+            temp = NULL;
+            break;
+        }
+        temp = temp->next;
+        length++;
+    } while (temp != NULL);
+    return length;
 }
 int main()
 {
