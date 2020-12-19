@@ -61,7 +61,66 @@ int length(LISTHEAD *queue)
     } while (temp != NULL);
     return length;
 }
+
+LISTITEM *remove_at(LISTHEAD *queue, int position)
+{
+    LISTITEM *temp;
+    int i = 0;
+    if (position < 0)
+    {
+        return NULL;
+    }
+    temp = queue->start;
+    do
+    {
+        if (temp == (LISTITEM *)queue)
+        {
+            temp = NULL;
+            break;
+        }
+        if (i == position)
+        {
+            temp->previous->next = temp->next;
+            temp->next->previous = temp->previous;
+            break;
+        }
+        temp = temp->next;
+        i++;
+
+    } while (temp != NULL);
+    return temp;
+}
+
+LISTITEM *add_after(LISTHEAD *queue, int position, LISTITEM *item)
+{
+    LISTITEM *temp;
+    int i = 0;
+    if (position < 0)
+    {
+        return NULL;
+    }
+    temp = queue->start;
+    do
+    {
+        if (temp == (LISTITEM *)queue)
+        {
+            temp = NULL;
+            break;
+        }
+        if (i == position)
+        {
+            item->next = temp->next;
+            item->previous = temp;
+            temp->next = item;
+            temp->previous = item;
+            break;
+        }
+        temp = temp->next;
+        i++;
+    } while (temp != NULL);
+    return temp;
+}
 int main()
 {
-    return 1;
+    return 0;
 }
