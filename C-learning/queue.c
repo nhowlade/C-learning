@@ -63,5 +63,5 @@ int length(LISTHEAD *queue)
 }
 int main()
 {
-    return 0;
+    return 1;
 }
