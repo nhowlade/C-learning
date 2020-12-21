@@ -122,15 +122,31 @@ LISTITEM *add_after(LISTHEAD *queue, int position, LISTITEM *item)
     } while (temp != NULL);
     return temp;
 }
+
+#define LAN 3
+
 int main()
 {
     LISTITEM *temp, *temp1;
+    char *pdata;
     temp = head.start; //Shallow copy
     do
     {
         temp1 = (LISTITEM *)malloc(sizeof(LISTITEM));
         memcpy(temp1, temp, sizeof(LISTITEM));
         enqueue(&shallow_cpy, temp1);
+        temp = temp->next;
+    } while (temp->next != head.start);
+
+    temp = head.start; //Deep Copy
+    do
+    {
+        temp1 = (LISTITEM *)malloc(sizeof(LISTITEM));
+        memcpy(temp1, temp, sizeof(LISTITEM));
+        pdata = (char *)malloc(LAN);
+        memcpy(pdata, temp->data, LAN);
+        temp1->data = pdata;
+        enqueue(&deep_cpy, temp1);
         temp = temp->next;
     } while (temp->next != head.start);
     return 0;
