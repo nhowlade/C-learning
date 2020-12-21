@@ -10,3 +10,12 @@ is that it also initialises the memory after allocating it.
 Pointer arithmetic refers to the pointer variable and adding 1 to it moves
 the pointer to next element by incrementing it by taking into account the
 size of the type of value it is pointing to.
+
+Deep-copy:
+This refers to when a completely new copy of the data and its reference is made from scratch.
+This is safer but slower in some cases.
+
+Shallow-copy:
+This refers to when a new reference is created to an existing data and so it takes much less time to
+accomplish shallow copy of a list. However, the problem lies when making changes to the copy you also risk
+getting the original list edited as well.
