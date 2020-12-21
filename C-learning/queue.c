@@ -15,6 +15,8 @@ typedef struct listhead
 } LISTHEAD;
 
 LISTHEAD head;
+LISTHEAD deep_cpy;
+LISTHEAD shallow_cpy;
 
 void enqueue(LISTITEM *item)
 {
@@ -122,5 +124,14 @@ LISTITEM *add_after(LISTHEAD *queue, int position, LISTITEM *item)
 }
 int main()
 {
+    LISTITEM *temp, *temp1;
+    temp = head.start; //Shallow copy
+    do
+    {
+        temp1 = (LISTITEM *)malloc(sizeof(LISTITEM));
+        memcpy(temp1, temp, sizeof(LISTITEM));
+        enqueue(&shallow_cpy, temp1);
+        temp = temp->next;
+    } while (temp->next != head.start);
     return 0;
 }
